@@ -201,28 +201,52 @@
         <p class="contact-subtitle">¿Tenes un nuevo proyecto en mente? Dejame tu contacto y te escribo pronto.</p>
       </div>
 
-      <form  action="https://formspree.io/f/mgovglqr"
-      method="POST"
-            class="contact-form">
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden"><label>No llenar este campo: <input name="bot-field" /></label></p>
+      <form
+  action="https://formspree.io/f/mgovglqr"
+  method="POST"
+  class="contact-form"
+>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name" class="form-label">Nombre</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-input"
+        required
+      />
+    </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name" class="form-label">Nombre</label>
-            <input type="text" id="name" name="name" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="email" name="email" class="form-label">Email</label>
-            <input type="email" id="email" name="email" class="form-input" required />
-          </div>
-        </div>
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-input"
+        required
+      />
+    </div>
+  </div>
 
-        <div class="form-actions">
-          <button type="submit" class="submit-btn">Enviar</button>
-          <p class="form-error">Hubo un error. Por favor intenta nuevamente.</p>
-        </div>
-      </form>
+  <div class="form-group">
+    <label for="message" class="form-label">Mensaje</label>
+    <textarea
+      id="message"
+      name="message"
+      class="form-input"
+      rows="5"
+      required
+    ></textarea>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="submit-btn">Enviar</button>
+    <p class="form-error">Hubo un error. Por favor intentá nuevamente.</p>
+  </div>
+</form>
+
     </div>
   </section>
 

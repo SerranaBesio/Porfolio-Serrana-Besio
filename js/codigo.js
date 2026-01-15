@@ -121,33 +121,7 @@ function inicializarFormularioContacto() {
         });
     }
 
-    // Envío del formulario (Netlify compatible)
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando...';
-        errorMsg.classList.remove('visible');
 
-        fetch('/', {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        })
-            .then(res => {
-                if (res.ok) {
-                    mostrarModalExito();
-                    form.reset();
-                } else throw new Error('Error del servidor');
-            })
-            .catch(() => {
-                errorMsg.classList.add('visible');
-                setTimeout(() => errorMsg.classList.remove('visible'), 4000);
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Enviar';
-            });
-    });
 
     // Modal de éxito
     if (modal && modalClose) {

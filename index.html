@@ -1,317 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serrana Besio - Portfolio</title>
-  <link rel="icon" href="imagenes/logo.png" type="image/x-icon" />
+  <link rel="icon" href="imagenes/logo1.png" type="image/x-icon" />
   <link rel="stylesheet" href="css/estilos.css" />
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != "dataLayer" ? "&l=" + l : "";
-      j.async = true;
-      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, "script", "dataLayer", "GTM-WG3437Q7");
-  </script>
-</head>
 
-<body>
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WG3437Q7"
-            height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-  </noscript>
 
-  <!-- =========================================================
-       HEADER / NAVEGACIÓN
-  ========================================================= -->
+
+  <!-- HEADER / NAVEGACIÓN -->
   <header>
     <div class="container">
       <nav>
-        <a href="#" class="logo">SB</a>
+        <a href="#" class="logo">
+          <span class="logo-corto">S</span>
+          <span class="logo-resto">B</span>
+          <span class="logo-full">errana Besio</span>
+        </a>
 
-        <button class="menu-toggle" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
+        <!-- Hamburguesa — visible solo en mobile vía CSS -->
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
         <ul class="nav-links">
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#proceso">Proceso</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#proyectos">PROYECTOS</a></li>
+          <li><a href="#sobre-mi">SOBRE MÍ</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- =========================================================
-       HERO
-  ========================================================= -->
-  <section id="hero" class="hero">
+  <!-- HERO -->
+  <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">El detalle <br>que da sentido.</h1>
-      <h2 class="hero-subtitle">
-        Diseño digital con intención, claridad y propósito.
-      </h2>
-      <div class="hero-btn">
-        <a href="#proyectos" class="btn">Ver proyectos</a>
-      </div>
+      <p class="hero-eyebrow">Diseño · Identidad · Editorial</p>
+      <h1 class="hero-frase">Intervenir lo justo.<br>Lo <em>simple</em> se vuelve único.</h1>
+      <p class="hero-nombre">Serrana Besio — Diseñadora Digital</p>
     </div>
+    <div class="hero-imagen"></div>
   </section>
 
-  <!-- =========================================================
-       PROYECTOS
-  ========================================================= -->
+  <!-- PROYECTOS -->
   <section id="proyectos">
     <div class="container">
       <div class="proyectos-header">
         <h2 class="proyectos-title">Proyectos.</h2>
-        <p class="subtitle">Una selección de trabajos recientes</p>
       </div>
       <div class="proyectos-grid" id="proyectos-grid">
-        <!-- Proyectos generados dinámicamente por JS -->
+        <!-- Generados dinámicamente por JS -->
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       SOBRE MÍ
-  ========================================================= -->
-  <section id="sobre-mi" class="section">
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi">
     <div class="container">
-      <div class="sobre-mi-header">
-        <h2 class="sobre-mi-title">Sobre mí.</h2>
-        <p class="subtitle">Te cuento mi camino y lo que me inspira día a día.</p>
-      </div>
-
-      <div class="sobre-mi-content">
-        <div class="sobre-mi-texto">
-          <p>¡Hola! por acá <strong>Serrana</strong>, diseñadora digital.</p>
-          <p>
-            Disfruto de transformar ideas en <strong>identidades visuales y experiencias digitales</strong>
-            simples, actuales y con propósito. Para mí, el diseño va más allá de lo estético:
-            se trata de conectar, comunicar y hacer que las cosas funcionen mejor.
-          </p>
-          <p>
-            Trabajo de cerca con cada proyecto, escuchando y buscando esa vuelta que hace que todo cobre sentido.
-            Me interesa lograr un equilibrio entre lo visual y lo funcional, con resultados que se sientan
-            <strong>auténticos y humanos</strong>.
-          </p>
-          <p>
-            Fuera de pantalla, me vas a encontrar viajando, saliendo a comer o entrenando.
-            Son mis momentos para desconectar y volver a inspirarme 💭
-          </p>
+      <div class="sobre-mi-grid">
+        <div class="sobre-mi-izquierda">
+          <h2>Sobre mí.</h2>
+          <div class="sobre-mi-texto">
+            <p>¡Hola! soy <strong>Serrana Besio</strong>, diseñadora digital. Me enfoco en desarrollar soluciones de diseño claras y estéticamente cuidadas, transformando ideas en piezas concretas con sentido.</p>
+            <p>Mi forma de diseñar parte de lo simple: observar, entender y tomar decisiones con intención. Desde ahí, construyo propuestas donde cada elemento cumple un rol y aporta a un resultado coherente.</p>
+            <p>Desde esa misma lógica, entiendo el diseño como un proceso compartido. A través de la escucha y la colaboración, cada proyecto se desarrolla de forma única, manteniendo un equilibrio entre lo simple y lo significativo.</p>
+          </div>
         </div>
-
-        <div class="single-polaroid-container">
-          <div class="single-polaroid">
-            <img src="imagenes/perfil2.jpeg" alt="Serrana diseñadora digital">
-            <div class="polaroid-caption"></div>
+        <div class="sobre-mi-derecha">
+          <div class="sobre-foto-wrap">
+            <img src="imagenes/foto-perfil.png" alt="Serrana Besio — diseñadora digital">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       PROCESO
-  ========================================================= -->
-  <section id="proceso" class="proceso-seccion">
-    <div class="container">
-      <div class="proceso-encabezado">
-        <h1 class="proceso-titulo-principal">Proceso.</h1>
-        <p class="proceso-subtitulo">Un recorrido donde las ideas toman forma, paso a paso</p>
-      </div>
-
-      <div class="proceso-acordeon">
-        <!-- Cada bloque de proceso -->
-        <div class="proceso-item">
-          <button class="proceso-boton">
-            <span class="proceso-titulo"><span class="numero">01.</span> Conectar y entender</span>
-            <div class="proceso-icono"><div class="plus-icon"><div class="plus-line horizontal"></div><div class="plus-line vertical"></div></div></div>
-          </button>
-          <div class="proceso-contenido">
-            <p>Todo comienza con una conversación. Me contás qué querés lograr, qué te inspira y hacia dónde querés llevar tu marca o proyecto.</p>
-          </div>
-          <div class="proceso-divisor"></div>
-        </div>
-
-        <div class="proceso-item">
-          <button class="proceso-boton">
-            <span class="proceso-titulo"><span class="numero">02.</span> Explorar y definir</span>
-            <div class="proceso-icono"><div class="plus-icon"><div class="plus-line horizontal"></div><div class="plus-line vertical"></div></div></div>
-          </button>
-          <div class="proceso-contenido">
-            <p>Traduzco tus ideas en propuestas visuales. Jugamos con colores, tipografías y estilos hasta encontrar una dirección que se sienta auténtica.</p>
-          </div>
-          <div class="proceso-divisor"></div>
-        </div>
-
-        <div class="proceso-item">
-          <button class="proceso-boton">
-            <span class="proceso-titulo"><span class="numero">03.</span> Diseñar y construir</span>
-            <div class="proceso-icono"><div class="plus-icon"><div class="plus-line horizontal"></div><div class="plus-line vertical"></div></div></div>
-          </button>
-          <div class="proceso-contenido">
-            <p>Con el rumbo definido, diseño la identidad o el sitio web cuidando cada detalle: estructura, equilibrio visual y coherencia con tu mensaje.</p>
-          </div>
-          <div class="proceso-divisor"></div>
-        </div>
-
-        <div class="proceso-item">
-          <button class="proceso-boton">
-            <span class="proceso-titulo"><span class="numero">04.</span> Ajustar y pulir</span>
-            <div class="proceso-icono"><div class="plus-icon"><div class="plus-line horizontal"></div><div class="plus-line vertical"></div></div></div>
-          </button>
-          <div class="proceso-contenido">
-            <p>Te muestro avances, escucho tu feedback y afinamos juntos hasta llegar a un resultado que te represente al 100%.</p>
-          </div>
-          <div class="proceso-divisor"></div>
-        </div>
-
-        <div class="proceso-item">
-          <button class="proceso-boton">
-            <span class="proceso-titulo"><span class="numero">05.</span> Lanzar y acompañar</span>
-            <div class="proceso-icono"><div class="plus-icon"><div class="plus-line horizontal"></div><div class="plus-line vertical"></div></div></div>
-          </button>
-          <div class="proceso-contenido">
-            <p>Te entrego los archivos finales y, si querés, te guío en los primeros pasos para aplicar tu nueva identidad o poner tu sitio online.</p>
-          </div>
-          <div class="proceso-divisor"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       CONTACTO
-  ========================================================= -->
+  <!-- CONTACTO -->
   <section id="contacto">
     <div class="container">
       <div class="contact-header">
         <h2 class="contact-title">Hablemos.</h2>
         <p class="contact-subtitle">¿Tenes un nuevo proyecto en mente? Dejame tu contacto y te escribo pronto.</p>
       </div>
-
-      <form
-  action="https://formspree.io/f/mgovglqr"
-  method="POST"
-  class="contact-form"
->
-  <div class="form-row">
-    <div class="form-group">
-      <label for="name" class="form-label">Nombre</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        class="form-input"
-        required
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        class="form-input"
-        required
-      />
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="message" class="form-label">Mensaje</label>
-    <textarea
-      id="message"
-      name="message"
-      class="form-input"
-      rows="5"
-      required
-    ></textarea>
-  </div>
-
-  <div class="form-actions">
-    <button type="submit" class="submit-btn">Enviar</button>
-    <p class="form-error">Hubo un error. Por favor intentá nuevamente.</p>
-  </div>
-</form>
-
+      <form action="https://formspree.io/f/mgovglqr" method="POST" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" id="name" name="name" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Mensaje</label>
+          <textarea id="message" name="message" class="form-input" rows="5" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">Enviar</button>
+          <p class="form-error">Hubo un error. Por favor intentá nuevamente.</p>
+        </div>
+      </form>
     </div>
   </section>
 
-
-
-
-</form>
-  <!-- =========================================================
-       MODAL DE ÉXITO
-  ========================================================= -->
+  <!-- MODAL DE ÉXITO -->
   <div class="form-modal" id="formModal">
     <div class="modal-content">
-      <div class="modal-icon">✓</div>
       <h3 class="modal-title">¡Gracias!</h3>
       <p class="modal-message">Tu mensaje fue enviado correctamente. Te contactaré pronto.</p>
       <button class="modal-close" id="modalClose">Cerrar</button>
     </div>
   </div>
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================= -->
+  <!-- FOOTER -->
   <footer id="footer">
     <div class="footer-container">
       <div class="footer-content">
         <nav class="footer-links">
-          <a href="https://www.linkedin.com/in/serrana-besio/"
+          <a href="https://www.behance.net/serranabesio"
              target="_blank" rel="noopener noreferrer"
-             class="footer-link linkedin-link">LinkedIn</a>
+             class="footer-link">Behance</a>
         </nav>
         <div class="footer-copy">
-          <p>&copy; 2025 Serrana Besio. Todos los derechos reservados.</p>
+          <p>&copy; 2026 Serrana Besio. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- =========================================================
-       BOTÓN FLOTANTE DE CONTACTO
-  ========================================================= -->
+  <!-- BOTÓN FLOTANTE DE CONTACTO -->
   <div class="boton-contacto-flotante">
     <input type="checkbox" id="toggle-contacto" class="toggle-contacto" />
-
     <label for="toggle-contacto" class="boton-contacto" aria-label="Abrir opciones de contacto">
       <i class="fas fa-comment-dots"></i>
       <span class="pulso"></span>
     </label>
-
     <div class="opciones-contacto">
       <a href="https://wa.me/59898307535?text=Hola%20Serrana%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios."
          target="_blank" class="opcion-contacto whatsapp" title="Contactar por WhatsApp">
-         <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp"></i>
       </a>
       <a href="mailto:besioserrana@gmail.com?subject=Quiero%20más%20info!&body=Hola%20Serrana%2C%20me%20gustar%C3%ADa%20conocer%20más%20sobre%20tu%20trabajo%20y%20los%20servicios%20que%20ofrec%C3%A9s.%0A%0A¡Gracias!"
          class="opcion-contacto email" title="Enviar email">
-         <i class="fas fa-envelope"></i>
+        <i class="fas fa-envelope"></i>
       </a>
     </div>
   </div>
 
-  <!-- =========================================================
-       SCRIPTS
-  ========================================================= -->
-  <script src="js/codigo.js" defer></script>
-  <script src="js/proyectos.js" defer></script>
-  <script src="js/detalle-proyectos.js" defer></script>
+  <!-- SCRIPTS -->
+  <script src="js/codigo.js"></script>
+  <script src="js/proyectos.js"></script>
+  <script src="js/detalle-proyectos.js"></script>
 </body>
 </html>

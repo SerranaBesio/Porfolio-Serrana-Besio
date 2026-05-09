@@ -1,46 +1,42 @@
 // =========================================================
-// NAVEGACIÓN Y UTILIDADES PRINCIPALES 
+// UTILIDADES
 // =========================================================
 
-// --- Scroll suave con offset del header ---
-function scrollASeccionConOffset(sectionId) {
-    const section = document.getElementById(sectionId);
+function scrollASeccion(id) {
+    const section = document.getElementById(id);
     if (!section) return;
-
-    const header = document.querySelector('header');
-    const headerHeight = header ? header.offsetHeight : 80;
-    const offsetPosition = section.offsetTop - headerHeight - 20;
-
-    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    const headerH = document.querySelector('header')?.offsetHeight ?? 80;
+    window.scrollTo({ top: section.offsetTop - headerH - 20, behavior: 'smooth' });
 }
 
-// --- Navegación general ---
-function navegarAInicio() {
-    const detalle = document.getElementById('proyecto-detalle');
-    if (detalle) detalle.remove();
+// =========================================================
+// NAVEGACIÓN
+// =========================================================
 
-    ['hero', 'proyectos', 'sobre-mi', 'proceso'].forEach(id => {
-        const seccion = document.getElementById(id);
-        if (seccion) seccion.style.display = id === 'hero' ? 'flex' : 'block';
+function navegarAInicio() {
+    document.getElementById('proyecto-detalle')?.remove();
+
+    ['proyectos', 'sobre-mi'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'block';
     });
+
+    const hero = document.querySelector('.hero');
+    if (hero) hero.style.display = 'flex';
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function volverAProyectos() {
     navegarAInicio();
-    setTimeout(() => scrollASeccionConOffset('proyectos'), 100);
+    setTimeout(() => scrollASeccion('proyectos'), 100);
 }
 
-// --- Configurar navegación del header ---
 function configurarNavegacionHeader() {
-    const logo = document.querySelector('.logo');
-    if (logo) {
-        logo.addEventListener('click', e => {
-            e.preventDefault();
-            navegarAInicio();
-        });
-    }
+    document.querySelector('.logo')?.addEventListener('click', e => {
+        e.preventDefault();
+        navegarAInicio();
+    });
 
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', e => {
@@ -48,51 +44,27 @@ function configurarNavegacionHeader() {
             const id = link.getAttribute('href').replace('#', '');
             if (document.getElementById('proyecto-detalle')) {
                 navegarAInicio();
-                setTimeout(() => scrollASeccionConOffset(id), 100);
+                setTimeout(() => scrollASeccion(id), 100);
             } else {
-                scrollASeccionConOffset(id);
+                scrollASeccion(id);
             }
-        });
-    });
-
-    const heroBtn = document.querySelector('.hero-btn a');
-    if (heroBtn) {
-        heroBtn.addEventListener('click', e => {
-            e.preventDefault();
-            const id = heroBtn.getAttribute('href').replace('#', '');
-            scrollASeccionConOffset(id);
-        });
-    }
-}
-
-// --- Header scroll behavior ---
-function manejarScrollHeader() {
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 100);
-    });
-}
-
-// --- Acordeón de proceso ---
-function inicializarAcordeonProceso() {
-    document.querySelectorAll('.proceso-item').forEach(item => {
-        const boton = item.querySelector('.proceso-boton');
-        const contenido = item.querySelector('.proceso-contenido');
-        if (!boton || !contenido) return;
-
-        boton.setAttribute('aria-expanded', 'false');
-        contenido.setAttribute('aria-hidden', 'true');
-
-        boton.addEventListener('click', () => {
-            const activo = item.classList.toggle('activo');
-            boton.setAttribute('aria-expanded', activo);
-            contenido.setAttribute('aria-hidden', !activo);
         });
     });
 }
 
 // =========================================================
-// FORMULARIO DE CONTACTO + MODAL DE ÉXITO
+// HEADER SCROLL
+// =========================================================
+
+function manejarScrollHeader() {
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 100);
+    }, { passive: true });
+}
+
+// =========================================================
+// FORMULARIO DE CONTACTO
 // =========================================================
 
 function inicializarFormularioContacto() {
@@ -100,47 +72,55 @@ function inicializarFormularioContacto() {
     if (!form) return;
 
     const submitBtn = form.querySelector('.submit-btn');
-    const errorMsg = form.querySelector('.form-error');
-    const modal = document.getElementById('formModal');
+    const errorMsg  = form.querySelector('.form-error');
+    const modal     = document.getElementById('formModal');
     const modalClose = document.getElementById('modalClose');
 
-    // Focus visual
-    form.querySelectorAll('.form-input, .form-textarea').forEach(input => {
-        input.addEventListener('focus', () => input.parentElement.classList.add('focused'));
-        input.addEventListener('blur', () => {
-            if (!input.value.trim()) input.parentElement.classList.remove('focused');
-        });
+    // Validación visual del email
+    const emailInput = form.querySelector('#email');
+    emailInput?.addEventListener('blur', () => {
+        const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+        emailInput.style.borderColor = valid || !emailInput.value ? '' : '#dc3545';
     });
 
-    // Validación básica de email
-    const emailInput = form.querySelector('#email');
-    if (emailInput) {
-        emailInput.addEventListener('blur', () => {
-            const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
-            emailInput.style.borderColor = valid || !emailInput.value ? '' : '#dc3545';
+    // Envío
+    form.addEventListener('submit', async e => {
+        e.preventDefault();
+        errorMsg?.classList.remove('visible');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: new FormData(form)
+            });
+
+            if (res.ok) {
+                modal?.classList.add('visible');
+                form.reset();
+                if (emailInput) emailInput.style.borderColor = '';
+            } else {
+                errorMsg?.classList.add('visible');
+            }
+        } catch {
+            errorMsg?.classList.add('visible');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Enviar';
+        }
+    });
+
+    // Modal
+    if (modal && modalClose) {
+        const cerrar = () => modal.classList.remove('visible');
+        modalClose.addEventListener('click', cerrar);
+        modal.addEventListener('click', e => e.target === modal && cerrar());
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && modal.classList.contains('visible')) cerrar();
         });
     }
-
-
-
-    // Modal de éxito
-    if (modal && modalClose) {
-        const cerrarModal = () => {
-            modal.classList.remove('visible');
-            form.reset();
-        };
-
-        modalClose.addEventListener('click', cerrarModal);
-        modal.addEventListener('click', e => e.target === modal && cerrarModal());
-        document.addEventListener('keydown', e => e.key === 'Escape' && modal.classList.contains('visible') && cerrarModal());
-    }
-}
-
-function mostrarModalExito() {
-    const modal = document.getElementById('formModal');
-    if (!modal) return;
-    modal.classList.add('visible');
-    setTimeout(() => modal.classList.remove('visible'), 4000);
 }
 
 // =========================================================
@@ -148,35 +128,43 @@ function mostrarModalExito() {
 // =========================================================
 
 function inicializarMenuMovil() {
-    const menuToggle = document.querySelector('.menu-toggle');
+    const toggle   = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    const body = document.body;
+    if (!toggle || !navLinks) return;
 
-    if (!menuToggle || !navLinks) return;
-
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        body.classList.toggle('menu-open');
+    toggle.addEventListener('click', () => {
+        const open = toggle.classList.toggle('active');
+        navLinks.classList.toggle('active', open);
+        toggle.setAttribute('aria-expanded', open);
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
+            toggle.classList.remove('active');
             navLinks.classList.remove('active');
-            body.classList.remove('menu-open');
+            toggle.setAttribute('aria-expanded', false);
         });
     });
 }
 
 // =========================================================
-// INICIALIZACIÓN GLOBAL
+// INIT
 // =========================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     configurarNavegacionHeader();
     manejarScrollHeader();
-    inicializarAcordeonProceso();
     inicializarFormularioContacto();
     inicializarMenuMovil();
 });
+
+
+
+
+
+
+
+
+
+
+

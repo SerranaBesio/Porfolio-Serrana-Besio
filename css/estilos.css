@@ -308,6 +308,8 @@ nav::after {
     border: none;
     cursor: pointer;
     padding: 0;
+    margin-left: auto;
+
 }
 
 .menu-toggle span {
@@ -1104,8 +1106,7 @@ nav::after {
 }
 
 @media (max-width: 768px) {
-    .container,
-    nav { padding: 0 var(--pad-mobile); }
+    .container { padding: 0 var(--pad-mobile); }
 
     /* Nav */
     .menu-toggle { display: flex; }
@@ -1114,7 +1115,7 @@ nav::after {
         position: fixed;
         top: 0; right: -100%;
         width: 100%; height: 100vh;
-        background: var(--white);
+        background: var(--agua);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1128,20 +1129,50 @@ nav::after {
     .nav-links.active { right: 0; }
 
     .nav-links a {
-        font-size: var(--fs-h4);
-        padding: var(--sp-12) var(--sp-24);
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        color: var(--white);
+        padding: var(--sp-12) 0;
         text-align: center;
         width: 100%;
-        max-width: 200px;
+        border-bottom: 0.5px solid var(--ink-10);
+        max-width: 240px;
     }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+
+/* Botón cerrar visible cuando el menú está abierto */
+.nav-links.active ~ .menu-toggle,
+.menu-toggle.active {
+    position: fixed;
+    top: 1.5rem;
+    right: var(--pad-mobile);
+    z-index: 1001;
+    color: var(--white);
+}
+
 
     /* Hero mobile */
     .hero {
-        background-position: center center;
-        align-items: flex-end;
+        background-position: right center;
+        background-size: cover;
+        align-items: center;
         padding-bottom: var(--sp-64);
     }
 
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(250, 249, 248, 0.75);
+        z-index: 1;
+    }
+
+    
     .hero-content { padding: 0 var(--pad-mobile); }
 
     /* Grids */

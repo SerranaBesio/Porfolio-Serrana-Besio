@@ -12,11 +12,8 @@ function generarHTMLDetalle(proyectoId) {
         ?? proyecto.imagenes?.[0]
         ?? '';
 
-    // Galería: excluir la imagen principal si ya aparece en el array
-    const galeria = (proyecto.imagenes ?? []).filter(img => {
-        const src = typeof img === 'string' ? img : img.src;
-        return src !== imagenPrincipal;
-    });
+        const galeria = proyecto.imagenes ?? [];
+
 
     const galeriaHTML = galeria.length ? `
         <div class="project-gallery">

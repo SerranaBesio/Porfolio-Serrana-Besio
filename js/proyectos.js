@@ -29,7 +29,7 @@ La propuesta combina ilustraciones vibrantes y composiciones exageradas para rei
         categoria: "Identidad visual",
         enlaceDemo: "https://landingrubenrada.netlify.app/",
         enlaceBehance: "https://www.behance.net/gallery/249030747/Ruben-Rada-Diseno-de-Vinilo",
-        imagen: "imagenes/rada-remera.jpg",
+        imagen: "imagenes/rada-remera.png",
        descripcionCorta: `Proyecto desarrollado junto a Matilde Braga.<br><br>
 
 Diseño de tapa y contratapa de vinilo para Rubén Rada, acompañado por piezas promocionales y un sitio web que amplía la propuesta visual y sonora.<br><br>

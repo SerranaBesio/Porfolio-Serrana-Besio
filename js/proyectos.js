@@ -16,11 +16,11 @@ const proyectos = [
         id: 2,
         nombre: "Juceca",
         categoria: "Diseño editorial",
-        imagen: "imagenes/juceca.png",
+        imagen: "imagenes/juceca.jpg",
         descripcionCorta: `Proyecto basado en la obra de Juceca que desarrolla el concepto “Historias para no creer”, inspirado en el carácter absurdo y humorístico de sus relatos.<br><br>
 
 La propuesta combina ilustraciones vibrantes y composiciones exageradas para reinterpretar su universo desde un lenguaje visual contemporáneo, irónico y dinámico.`,        
-        imagenes: ["imagenes/juceca.png", "imagenes/juceca2.png", "imagenes/marcalibro.png", "imagenes/juceca4.png"],
+        imagenes: ["imagenes/juceca.jpg", "imagenes/juceca2.jpg", "imagenes/marcalibro.jpg", "imagenes/juceca4.jpg"],
     },
 
     {
@@ -29,14 +29,14 @@ La propuesta combina ilustraciones vibrantes y composiciones exageradas para rei
         categoria: "Identidad visual",
         enlaceDemo: "https://landingrubenrada.netlify.app/",
         enlaceBehance: "https://www.behance.net/gallery/249030747/Ruben-Rada-Diseno-de-Vinilo",
-        imagen: "imagenes/rada-remera.png",
+        imagen: "imagenes/rada-remera.jpg",
        descripcionCorta: `Proyecto desarrollado junto a Matilde Braga.<br><br>
 
 Diseño de tapa y contratapa de vinilo para Rubén Rada, acompañado por piezas promocionales y un sitio web que amplía la propuesta visual y sonora.<br><br>
 
 El concepto “Origen” se construye a partir de su universo musical, tomando el candombe como raíz rítmica y la identidad como su expresión, tanto individual como colectiva.<br><br>`
 ,
-        imagenes: ["imagenes/rada1.png", "imagenes/rada2.png"],
+        imagenes: ["imagenes/rada1.jpg", "imagenes/rada2.jpg"],
     },
 
     
@@ -45,26 +45,26 @@ El concepto “Origen” se construye a partir de su universo musical, tomando e
         nombre: "Wasabi",
         categoria: "Identidad visual",
         enlaceBehance:"https://www.behance.net/gallery/248902027/Wasabi-Apertura-de-sistema",
-        imagen: "imagenes/wasabi-hero.png",
+        imagen: "imagenes/wasabi-hero.jpg",
         descripcionCorta: `Proyecto de desarrollo y ampliación del sistema identitario de Wasabi.<br><br>
 
 A partir del análisis de su identidad, historia y públicos, se definieron nuevos lineamientos comunicacionales para actualizar el sistema de marca.
 
 Se desarrolló una identidad con aplicaciones clave que incluyen un mural institucional como pieza central dentro del espacio.`,
-        imagenes: ["imagenes/wasabi-canguro.png", "imagenes/wasabi-stickers.png", "imagenes/wasabi-vaso.png",  "imagenes/wasabi-gorro.png"],
+        imagenes: ["imagenes/wasabi-canguro.jpg", "imagenes/wasabi-stickers.jpg", "imagenes/wasabi-vaso.png",  "imagenes/wasabi-gorro.jpg"],
 },
 
 {
     id: 5,
     nombre: "Milton Glaser",
     categoria: "Diseño Editorial",
-    imagen: "imagenes/glaser-mockup.png",
+    imagen: "imagenes/glaser-mockup.jpg",
     descripcionCorta: `Diseño editorial del artículo “10 cosas que aprendí” de Milton Glaser.<br><br>
 
 Se desarrolló un folleto que integra una síntesis conceptual de su pensamiento junto a imágenes representativas de su obra. La propuesta trabaja la composición tipográfica, la jerarquía visual y la relación entre texto e imagen, retomando su estética vibrante y su uso característico del color.
 
 El resultado es una pieza clara y dinámica, pensada para una lectura ágil y una experiencia visual coherente con su universo como diseñador.`,
-    imagenes: ["imagenes/glaser-1.png", "imagenes/glaser-2.png"],
+    imagenes: ["imagenes/glaser-1.jpg", "imagenes/glaser-2.jpg"],
 
 },
 {
@@ -78,12 +78,11 @@ El resultado es una pieza clara y dinámica, pensada para una lectura ágil y un
 A partir de un layout base, se desarrolló una propuesta responsiva centrada en la experiencia de usuario y la coherencia visual, buscando reflejar la calidez y sofisticación de la marca.
 
 Se priorizó una interfaz limpia y elegante, con una paleta cromática cálida y una tipografía clara, construyendo una navegación simple y una experiencia visual equilibrada.`,
-    imagenes: ["imagenes/ambar-pc.png", "imagenes/ambar-cel.png"],
+    imagenes: ["imagenes/ambar-pc.jpg", "imagenes/ambar-cel.jpg"],
 }
 ];
 
 
-// FUNCIÓN PRINCIPAL: GENERAR PROYECTOS EN LA GRID
 function generarProyectos() {
     const grid = document.getElementById('proyectos-grid');
     if (!grid) return;

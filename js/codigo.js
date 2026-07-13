@@ -1,15 +1,19 @@
+// =========================================================
+// UTILIDADES
+// =========================================================
 const header = document.querySelector('header');
-const loader = document.getElementById('loader');
 
 window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 10);
 });
 
 window.addEventListener('load', () => {
-    loader.classList.add('loaded');
-    setTimeout(() => loader.classList.add('hidden-loader'), 1400);
-});
+    loader.classList.add('loaded');        // dispara la animación de entrada
+    setTimeout(() => loader.classList.add('hidden-loader'), 1400); // lo oculta
+  });
 
+
+console.log(document.querySelector('header').innerHTML)
 
 
 
@@ -147,6 +151,9 @@ function inicializarMenuMovil() {
         const open = toggle.classList.toggle('active');
         navLinks.classList.toggle('active', open);
         toggle.setAttribute('aria-expanded', open);
+        
+        // Bloquea el scroll cuando el menú está abierto
+        document.body.style.overflow = open ? 'hidden' : '';
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
@@ -154,9 +161,11 @@ function inicializarMenuMovil() {
             toggle.classList.remove('active');
             navLinks.classList.remove('active');
             toggle.setAttribute('aria-expanded', false);
+            document.body.style.overflow = '';  // ← restaura el scroll
         });
     });
 }
+
 
 // =========================================================
 // INIT
@@ -168,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
     inicializarFormularioContacto();
     inicializarMenuMovil();
 });
-
 
 
 

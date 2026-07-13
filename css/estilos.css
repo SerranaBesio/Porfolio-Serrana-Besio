@@ -124,7 +124,7 @@ section[id] {
 ========================================================= */
 h2 {
     font-size: var(--fs-h2);
-    font-weight: 400;
+    font-weight: 300;
     font-family: var(--font);
     line-height: 1.2;
     color: var(--coral);

@@ -16,42 +16,56 @@
 
 <body>
 
-  <!-- HEADER / NAVEGACIÓN -->
+  <div id="loader">
+    <div id="loader-text">
+      <span id="loader-serrana">Serrana </span>
+      <span id="loader-besio"> Besio</span>
+    </div>
+    <p id="loader-sub">diseñadora digital</p>
+  </div>
+
+
+
+
+
   <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">
-          <span class="logo-corto">S</span>
-          <span class="logo-resto">B</span>
-          <span class="logo-full">errana Besio</span>
-        </a>
-
-        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <ul class="nav-links">
-          <li><a href="#proyectos">PROYECTOS</a></li>
-          <li><a href="#sobre-mi">SOBRE MÍ</a></li>
-          <li><a href="#contacto">CONTACTO</a></li>
-        </ul>
-      </nav>
-    </div>
+    <a href="#" class="logo">
+      <span class="logo-corto">S</span>
+      <span class="logo-resto">B</span>
+      <span class="logo-full">errana Besio</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#proyectos">PROYECTOS</a></li>
+        <li><a href="#sobre-mi">SOBRE MÍ</a></li>
+        <li><a href="#contacto">CONTACTO</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <!-- HERO -->
+  
   <section class="hero">
-    <img src="imagenes/fondo-hero.png" class="hero-bg-imagen" alt="Ilustración de líneas orgánicas simulando un coral">
-
     <div class="hero-content">
-      <p class="hero-eyebrow">Diseño · Identidad · Editorial</p>
-      <h1 class="hero-frase">Intervenir lo justo.<br>Lo <em>simple</em> se vuelve único.</h1>
-      <p class="hero-nombre">Serrana Besio — Diseñadora Digital</p>
+  
+      <h1 class="hero-frase">
+        <span class="hero-linea-wrap">
+          <span class="hero-linea">Diseño web,</span>
+        </span>
+        <span class="hero-linea-wrap">
+          <span class="hero-linea">identidad visual.</span>
+        </span>
+      </h1>
+  
+      <p class="hero-sub">impulsado por estética & intención</p>
+  
+      <a href="#contacto" class="hero-cta">
+        <span class="hero-cta-linea"></span>
+        TRABAJEMOS JUNTOS
+      </a>
+  
     </div>
-    <div class="hero-imagen"></div>
   </section>
+
+
 
   <!-- PROYECTOS -->
   <section id="proyectos">
@@ -73,13 +87,14 @@
           <h2>Sobre mí.</h2>
           <div class="sobre-mi-texto">
             <p>¡Hola! soy <strong>Serrana Besio</strong>, diseñadora digital. Me enfoco en desarrollar soluciones de diseño claras y estéticamente cuidadas, transformando ideas en piezas concretas con sentido.</p>
-            <p>Mi forma de diseñar parte de lo simple: observar, entender y tomar decisiones con intención. Desde ahí, construyo propuestas donde cada elemento cumple un rol y aporta a un resultado coherente.</p>
-            <p>Desde esa misma lógica, entiendo el diseño como un proceso compartido. A través de la escucha y la colaboración, cada proyecto se desarrolla de forma única, manteniendo un equilibrio entre lo simple y lo significativo.</p>
+            <p>Mi forma de diseñar parte de lo simple: observar, entender y tomar decisiones con proposito. Desde ahí, desarrollo propuestas donde cada elemento cumple una función, dando lugar a soluciones equilibradas y coherentes.
+            </p>
+            <p>Entiendo el diseño como un proceso compartido. A través de la escucha y la colaboración, cada proyecto se desarrolla de forma única, manteniendo un equilibrio entre lo simple y lo significativo.</p>
           </div>
         </div>
         <div class="sobre-mi-derecha">
           <div class="sobre-foto-wrap">
-            <img src="imagenes/foto-perfil.png" alt="Serrana Besio — diseñadora digital">
+            <img src="imagenes/foto horizontal.png" alt="Serrana Besio — diseñadora digital">
           </div>
         </div>
       </div>
@@ -88,7 +103,6 @@
 
   <!-- CONTACTO -->
   <section id="contacto">
-    <img src="imagenes/fondo-contacto.png" class="contacto-bg-imagen" alt="Ilustración de líneas orgánicas simulando un coral">
     <div class="container">
       <div class="contact-header">
         <h2 class="contact-title">Hablemos.</h2>

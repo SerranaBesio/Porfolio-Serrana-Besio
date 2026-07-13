@@ -1,6 +1,17 @@
-// =========================================================
-// UTILIDADES
-// =========================================================
+const header = document.querySelector('header');
+const loader = document.getElementById('loader');
+
+window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+window.addEventListener('load', () => {
+    loader.classList.add('loaded');
+    setTimeout(() => loader.classList.add('hidden-loader'), 1400);
+});
+
+
+
 
 function scrollASeccion(id) {
     const section = document.getElementById(id);

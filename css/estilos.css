@@ -1205,6 +1205,11 @@ nav { display: flex; align-items: center; }
 }
 
 @media (max-width: 768px) {
+
+#loader {
+    display: none;
+}
+
     .container { padding: 0 var(--pad-mobile); }
 
     /* Nav */
